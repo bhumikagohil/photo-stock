@@ -1,0 +1,2 @@
+export const SAVE_IMAGE = "SAVE_IMAGE";
+export const REMOVE_SAVED_IMAGE = "REMOVE_SAVED_IMAGE";
