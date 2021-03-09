@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 10px;
@@ -10,7 +10,6 @@ export const Container = styled.div`
     height: 60px;
     margin: 5px;
   }
-  
   background: linear-gradient(
     45deg,
     #405de6,

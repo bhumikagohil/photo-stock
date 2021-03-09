@@ -2,10 +2,11 @@ import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Card from "./Card";
 
-const ImageScroll = ({ items }) => {
+const ImageScroll = ({ items, hasMore }) => {
   return (
     <InfiniteScroll
       dataLength={items.length}
+      hasMore={hasMore}
       loader={<h4>Loading...</h4>}
       endMessage={
         <p style={{ textAlign: "center" }}>
@@ -14,7 +15,9 @@ const ImageScroll = ({ items }) => {
       }
     >
       {items.map((item) => (
-        <Card item={item} key={item.id} />
+        <>
+          <Card item={item} key={item.id} />
+        </>
       ))}
     </InfiniteScroll>
   );

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Author,Body, Container, Image } from "./CardElements";
+import React from "react";
+import { Author, Body, Container, Image } from "./CardElements";
 
 const Card = ({ Info }) => {
   return (

@@ -29,6 +29,7 @@ const ImageScroll = () => {
   return (
     <Scroll
       dataLength={value.items.length}
+      // next={fetchMoreData}
       hasMore={value.hasMore}
       endMessage={
         <p style={{ textAlign: "center" }}>

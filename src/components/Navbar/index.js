@@ -7,7 +7,7 @@ import {
   Bars,
   NavMenu,
   SideBar,
-  SideBarLinks
+  SideBarLinks,
 } from "./NavElements";
 
 const navLinks = [
@@ -34,7 +34,7 @@ const Navbar = () => {
         <Bars onClick={openSidebar} />
         {openMenu && (
           <SideBar>
-            <Close onClick={closeSidebar}/>
+            <Close onClick={closeSidebar} />
             <ul>
               {navLinks.map((navLink) => (
                 <SideBarLinks exact to={navLink.path} activeStyle>

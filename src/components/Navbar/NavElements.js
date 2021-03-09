@@ -90,7 +90,7 @@ export const SideBarLinks = styled(Link)`
   &.active {
     color: #fff;
     background-color: #41c7c2;
-    width:40%
+    width: 40%;
   }
   &.hover {
     background-color: #beecea;

@@ -1,18 +1,18 @@
 import * as actionTypes from "./saved-types";
 
 const INITIAL_STATE = {
-  savedImages: [102, 1020, 1021],
+  savedImages: [],
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.SAVE_IMAGE:
       let index = state.savedImages.findIndex((el) => el == action.payload.id);
-      if (index == -1) 
-      return{
-        ...state,
-        savedImages: [...state.savedImages, action.payload.id]
-      } 
+      if (index == -1)
+        return {
+          ...state,
+          savedImages: [...state.savedImages, action.payload.id],
+        };
       return state;
     case actionTypes.REMOVE_SAVED_IMAGE:
       return {

@@ -17,6 +17,19 @@ const ImageScroll = () => {
     items: [],
     hasMore: true,
   });
+  const fetchMoreData = () => {
+    if (value.items.length >= 500) {
+      setValue({ hasMore: false });
+      return;
+    }
+    // a fake async api call like which sends
+    // 20 more records in .5 secs
+    setTimeout(() => {
+      setValue({
+        items: value.items.concat(Array.from({ length: 20 })),
+      });
+    }, 500);
+  };
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios("https://picsum.photos/v2/list");
@@ -29,6 +42,7 @@ const ImageScroll = () => {
   return (
     <Scroll
       dataLength={value.items.length}
+      // next={fetchMoreData}
       hasMore={value.hasMore}
       endMessage={
         <p style={{ textAlign: "center" }}>

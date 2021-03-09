@@ -6,6 +6,7 @@ import VerticalScroll from "../VerticalScroll/Scroll";
 
 const SavedImage = () => {
   const [items, setItems] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
 
   const savedImages = useSelector((state) => state.saved.savedImages);
 
@@ -22,7 +23,7 @@ const SavedImage = () => {
     };
     fetchSavedImages();
   }, [savedImages]);
-  return <>{items && <VerticalScroll items={items} />}</>;
+  return <>{items && <VerticalScroll items={items} hasMore={hasMore} />}</>;
 };
 
 export default SavedImage;

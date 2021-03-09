@@ -5,6 +5,7 @@ import VerticalScroll from "../VerticalScroll/Scroll";
 
 const Home = () => {
   const [items, setItems] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +17,7 @@ const Home = () => {
   return (
     <>
       <HorizontalScroll />
-      <VerticalScroll items={items} />
+      <VerticalScroll items={items} hasMore={hasMore} />
     </>
   );
 };

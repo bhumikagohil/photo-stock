@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { saveImage, removeSavedImage } from "../../redux/saved/saved-actions";
 import {
   ActiveButton,
@@ -16,6 +16,7 @@ import {
 
 const Card = ({ item, index }) => {
   const dispatch = useDispatch();
+  const savedImages = useSelector((state) => state.saved.savedImages);
 
   const [saved, setSaved] = useState(false);
 
@@ -27,6 +28,13 @@ const Card = ({ item, index }) => {
     }
     setSaved(!saved);
   };
+
+  useEffect(() => {
+    const fetchSavedImage = () => {
+      savedImages.includes(item.id) && setSaved(true);
+    };
+    fetchSavedImage();
+  }, [savedImages]);
 
   const MyButton = saved ? ActiveButton : Button;
 
