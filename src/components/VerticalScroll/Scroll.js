@@ -3,6 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Card from "./Card";
 
 const ImageScroll = ({ items }) => {
+  
   return (
     <InfiniteScroll
       dataLength={items.length}
@@ -14,7 +15,9 @@ const ImageScroll = ({ items }) => {
       }
     >
       {items.map((item) => (
-        <Card item={item} key={item.id} />
+    
+          <Card item={item} key={item.id} />
+       
       ))}
     </InfiniteScroll>
   );

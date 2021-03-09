@@ -12,6 +12,7 @@ const Card = ({ Info }) => {
           </Body>
         </>
       )}
+      {console.log(Info)}
     </Container>
   );
 };
